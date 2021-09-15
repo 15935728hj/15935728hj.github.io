@@ -57,7 +57,7 @@ Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品�
      默认帐号为admin,默认密码可通过挂载的数据卷中的admin.password查看,登陆后可修改密码  
      端口映射了 8081-8089 九个端口作为冗余  
 
-## 部署完成
+# 部署完成
 接下来进入本文的第二部分,恰巧仓库搭建完,我需要一个 Docker 私有镜像仓库,又开始了漫漫选型路  
 现如今比较常见的仓库有以下几个:
 * Registry: Docker 官方提供的原生仓库
@@ -67,7 +67,7 @@ Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品�
 企业级,多么诱人的名字,我理所当然地选择了 Harbor ,看了一圈下来果断劝退,理由是作为一个坚定的 Podman 使用者, Harbor 官方的部署方式是使用 docker-compose , Podman 目前并没有官方成熟的替代产品(痛心疾首),而手动部署的方式有过于麻烦也不便管理  
 最终,在机缘巧合之下发现 Nexus3 的版本支持作为 Docker 镜像仓库(狂喜)  
 
-### Nexus3 Docker 镜像仓库配置
+# Nexus3 Docker 镜像仓库配置
 1. 登陆 Nexus 后,点击设置
    ![Podman、Docker搭建Nexus3私有Maven、Docker镜像仓库-1](https://blog-1257162717.cos.ap-shanghai.myqcloud.com/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BANexus3%E7%A7%81%E6%9C%89Maven%E3%80%81Docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BANexus3%E7%A7%81%E6%9C%89Maven%E3%80%81Docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93-1.png)  
 
@@ -86,5 +86,5 @@ Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品�
     ![Podman、Docker搭建Nexus3私有Maven、Docker镜像仓库-3](https://blog-1257162717.cos.ap-shanghai.myqcloud.com/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BANexus3%E7%A7%81%E6%9C%89Maven%E3%80%81Docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BAnexus3%E7%A7%81%E6%9C%89maven%E3%80%81docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93-3.png)
     至此,大功告成
 
-## 拓展  
+# 拓展  
    最后还有一些个人的思路,云服务器上部署私有镜像仓库听起来是很不错,但是实际上还是存在着一些问题,比如存储问题, Nexus 本身是支持使用 AWS 的对象存储作为 Blob Stores 的但是奈何我不想再注册一个 AWS 的帐号,而对象存储本身又是一笔支出,还是从免费入手,一番查证后,腾讯云的对象存储也是使用 AWS 的 S3 协议,但是一番操作过后,由于设置中的 Region 只能在已有列表中选择,宣告GG,于是又衍生出了另一个思路, 使用对象存储工具 COSFS 将腾讯云的存储桶挂载为服务器磁盘,然后在 Blob Stores 中进行添加,达到同样的效果,后续如果有时间去操作了,再出一个教程吧,而关于 Docker 和 Podman 如何使用私有镜像仓库,实际上还是有一些小坑的,也是等下个教程再说吧
