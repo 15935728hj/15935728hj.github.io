@@ -1,15 +1,14 @@
-sudo: false
+sudo: true
 language: node_js
 node_js:
-  - 16 # use nodejs v10 LTS
+  - 10 # use nodejs v10 LTS
 cache: npm
 branches:
   only:
     - master # build master branch only
 script:
-  - ./node_modules/.bin/hexo clean && ./node_modules/.bin/hexo generate
-  # - hexo clean
-  # - hexo generate # generate static files
+  - hexo clean
+  - hexo generate # generate static files
 deploy:
   provider: pages
   skip-cleanup: true
