@@ -1,4 +1,4 @@
-sudo: true
+sudo: false
 language: node_js
 node_js:
   - 10 # use nodejs v10 LTS
@@ -7,6 +7,7 @@ branches:
   only:
     - master # build master branch only
 script:
+  - npm install mozjpeg
   - hexo clean
   - hexo generate # generate static files
 deploy:
