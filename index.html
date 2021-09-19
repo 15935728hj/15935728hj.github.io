@@ -1,9 +1,1106 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="编程,程序员,Java,React,Linux,SpringBoot,Go,JavaScript"><meta name="description" content="编程，程序员，Java"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="baidu-site-verification" content="code-TLOHuwMJbN"><meta name="google-site-verification" content="fG8aNcPDuTHtOQbiiG8VjvHsM-GTYHIkAS8ufFZSFU8"><script>!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-PKMQGSD",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")</script><title>Evil的养鸡场</title><meta name="generator" content="hexo-theme-ayer"><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/dist/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"><link rel="stylesheet" href="/css/custom.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?e63b83e32ffd141ab050decea213aa7b";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><link rel="alternate" href="/atom.xml" title="Evil的养鸡场" type="application/atom+xml">
-</head></html><body><div id="app"><canvas width="1777" height="841" style="position:fixed;left:0;top:0;z-index:99999;pointer-events:none"></canvas><main class="content on"><section class="cover"><a class="forkMe" href="https://github.com/li-ji-ji" target="_blank"><img width="149" height="149" src="/images/forkme.png" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a><div class="cover-frame"><div class="bg-box"><img src="https://blog-1257162717.cos.ap-shanghai.myqcloud.com/public/cover2.webp" alt="image frame"></div><div class="cover-inner text-center text-white"><h1><a href="/">Evil的养鸡场</a></h1><div id="subtitle-box"><span id="subtitle"></span></div><div></div></div></div><div class="cover-learn-more"><a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a></div></section><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script><script>try{var typed=new Typed("#subtitle",{strings:["咯咯咯咯咯咯","咯咯咯咯咯咯哒","想养鸡吗，想当韭菜吗"],startDelay:0,typeSpeed:200,loop:!0,backSpeed:100,showCursor:!0})}catch(e){console.log(e)}</script><div id="main"><section class="outer"><div class="notice" style="margin-top:50px"><i class="ri-heart-fill"></i><div class="notice-content" id="broad"></div></div><script type="text/javascript">fetch("https://v1.hitokoto.cn").then(t=>t.json()).then(t=>{document.getElementById("broad").innerHTML=t.hitokoto}).catch(console.error)</script><style>.notice{padding:20px;border:1px dashed #e6e6e6;color:#969696;position:relative;display:inline-block;width:100%;background:#fbfbfb50;border-radius:10px}.notice i{float:left;color:#999;font-size:16px;padding-right:10px;vertical-align:middle;margin-top:-2px}.notice-content{display:initial;vertical-align:middle}</style><article class="articles"><article id="post-ssh免密登陆" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal><div class="article-inner"><header class="article-header"><h2 itemprop="name"><a class="article-title" href="/2021/06/22/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/">ssh免密登陆</a></h2></header><div class="article-meta"><a href="/2021/06/22/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/" class="article-date"><time datetime="2021-06-22T01:42:41.000Z" itemprop="datePublished">2021-06-22</time></a><div class="article-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></div></div><div class="article-entry" itemprop="articleBody"><h2 id="1-在客户端生成公私钥"><a href="#1-在客户端生成公私钥" class="headerlink" title="1. 在客户端生成公私钥"></a>1. 在客户端生成公私钥</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">ssh<span class="token operator">-</span>keygen <span class="token comment"># 在当前服务器生成公私钥,选项全为默认即可  </span>
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="编程,程序员,Java,React,Linux,SpringBoot,Go,JavaScript" />
+   
+  <meta name="description" content="编程，程序员，Java" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="baidu-site-verification" content="code-TLOHuwMJbN" />
+  <meta name="google-site-verification" content="fG8aNcPDuTHtOQbiiG8VjvHsM-GTYHIkAS8ufFZSFU8" />
+  <!-- Google Tag Manager -->  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PKMQGSD');</script>
+    <!-- End Google Tag Manager -->
+  <title>
+     Evil的养鸡场
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?e63b83e32ffd141ab050decea213aa7b";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<link rel="alternate" href="/atom.xml" title="Evil的养鸡场" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      
+<section class="cover">
+    
+      
+      <a class="forkMe" href="https://github.com/li-ji-ji"
+        target="_blank"><img width="149" height="149" src="/images/forkme.png"
+          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
+  <div class="cover-frame">
+    <div class="bg-box">
+      <img src="https://blog-1257162717.cos.ap-shanghai.myqcloud.com/public/cover2.webp" alt="image frame" />
+    </div>
+    <div class="cover-inner text-center text-white">
+      <h1><a href="/">Evil的养鸡场</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="cover-learn-more">
+    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+  </div>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['咯咯咯咯咯咯', '咯咯咯咯咯咯哒', '想养鸡吗，想当韭菜吗'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+<div id="main">
+  <section class="outer">
+  
+  
+  
+
+<div class="notice" style="margin-top:50px">
+    <i class="ri-heart-fill"></i>
+    <div class="notice-content" id="broad"></div>
+</div>
+<script type="text/javascript">
+    fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("broad").innerHTML = data.hitokoto;
+        })
+        .catch(console.error)
+</script>
+
+<style>
+    .notice {
+        padding: 20px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        background: #fbfbfb50;
+        border-radius: 10px;
+    }
+
+    .notice i {
+        float: left;
+        color: #999;
+        font-size: 16px;
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    .notice-content {
+        display: initial;
+        vertical-align: middle;
+    }
+</style>
+  
+  <article class="articles">
+    
+    
+    
+    
+    <article
+  id="post-docker、podman搭建nexus3私有maven、docker镜像仓库"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/09/15/docker%E3%80%81podman%E6%90%AD%E5%BB%BAnexus3%E7%A7%81%E6%9C%89maven%E3%80%81docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/"
+    >Podman、Docker搭建Nexus3私有Maven、Docker镜像仓库</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/09/15/docker%E3%80%81podman%E6%90%AD%E5%BB%BAnexus3%E7%A7%81%E6%9C%89maven%E3%80%81docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/" class="article-date">
+  <time datetime="2021-09-15T10:09:58.000Z" itemprop="datePublished">2021-09-15</time>
+</a> 
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a> / <a class="article-category-link" href="/categories/Linux/Docker/">Docker</a> / <a class="article-category-link" href="/categories/Linux/Docker/Podman/">Podman</a> / <a class="article-category-link" href="/categories/Linux/Docker/Podman/Maven/">Maven</a> / <a class="article-category-link" href="/categories/Linux/Docker/Podman/Maven/%E5%AE%B9%E5%99%A8%E5%8C%96/">容器化</a>
+  </div>
+ 
+      
+       
+      
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>在日常开发中,为了更简单的使用一些自制的工具,因此有时会把工具集打成 jar 包方便调用<br>虽然可以存放在 Maven 本地仓库,但是万物皆可云,为什么不搭建一个云端私有仓库呢<br>众所周知,良心云套路云各大云平台都提供了免费的私有 Maven 仓库服务,用就好啦</p>
+<h1 id="此帖终结"><a href="#此帖终结" class="headerlink" title="此帖终结"></a>此帖终结</h1><p>哈哈逗你的,众所周知前期免费中后期就可能收费,作为一个DIY(qiong bi)爱好者,当然是自己动手搭建一个,经过 Google 最终选型是 Nexus<br>Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品。它是一个强大的仓库管理器，极大地简化了内部仓库的维护和外部仓库的访问(抄的)</p>
+<h1 id="进入教程"><a href="#进入教程" class="headerlink" title="进入教程"></a>进入教程</h1><ol>
+<li><p>Podman、Docker安装<br>推荐官方文档: <a target="_blank" rel="noopener" href="https://podman.io/getting-started/installation">Podman安装</a>、<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/">Docker安装</a>  </p>
+<p><code>PS</code>:使用 Arch 系 Linux 安装 Podman 时会遇到权限问题, ArchWiki 上就有解决方案<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Podman">(地址)</a>,Podman 基本兼容 Docker 命令,下文使用 Podman 进行操作,如使用 Docker ,需 root 权限</p>
+</li>
+<li><p>部署<br>此处使用最简单的 Podman 容器化部署  </p>
+<ul>
+<li>创建文件夹用于后面挂载容器数据<br>出于方便赋予 <code>777</code> 权限(重度洁癖者可自行授予其他权限)<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">  mkdir -p ~&#x2F;nexus&#x2F;data
+  chmod 777 -R ~&#x2F;nexus
+  &#96;&#96;&#96;  
+* 创建容器并挂载对应数据卷
+  &#96;&#96;&#96;shell
+  podman run --restart always -d \ 
+             -v ~&#x2F;nexus&#x2F;data:&#x2F;nexus-data \ 
+             -p 8081-8089:8081-8089 \ 
+             --name nexus \ 
+             klo2k&#x2F;nexus3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+大约等待两分钟后通过浏览器访问 <code>http://IP地址:8081</code> 即可进入 Nexus 的管理界面<br>默认帐号为admin,默认密码可通过挂载的数据卷中的admin.password查看,登陆后可修改密码<br>端口映射了 8081-8089 九个端口作为冗余  </li>
+</ul>
+</li>
+</ol>
+<h1 id="部署完成"><a href="#部署完成" class="headerlink" title="部署完成"></a>部署完成</h1><p>接下来进入本文的第二部分,恰巧仓库搭建完,我需要一个 Docker 私有镜像仓库,又开始了漫漫选型路<br>现如今比较常见的仓库有以下几个:</p>
+<ul>
+<li>Registry: Docker 官方提供的原生仓库</li>
+<li>Portus：由 SuSE 团队推出</li>
+<li>Harbor: VMWare 中国团队推出的企业级仓库  </li>
+</ul>
+<p>企业级,多么诱人的名字,我理所当然地选择了 Harbor ,看了一圈下来果断劝退,理由是作为一个坚定的 Podman 使用者, Harbor 官方的部署方式是使用 docker-compose , Podman 目前并没有官方成熟的替代产品(痛心疾首),而手动部署的方式有过于麻烦也不便管理<br>最终,在机缘巧合之下发现 Nexus3 的版本支持作为 Docker 镜像仓库(狂喜)  </p>
+<h1 id="Nexus3-Docker-镜像仓库配置"><a href="#Nexus3-Docker-镜像仓库配置" class="headerlink" title="Nexus3 Docker 镜像仓库配置"></a>Nexus3 Docker 镜像仓库配置</h1><ol>
+<li><p>登陆 Nexus 后,点击设置<br><img src="https://blog-1257162717.cos.ap-shanghai.myqcloud.com/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BANexus3%E7%A7%81%E6%9C%89Maven%E3%80%81Docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BANexus3%E7%A7%81%E6%9C%89Maven%E3%80%81Docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93-1.png" alt="Podman、Docker搭建Nexus3私有Maven、Docker镜像仓库-1">  </p>
+</li>
+<li><p>点击仓库并点击 Create repository 创建仓库<br><img src="https://blog-1257162717.cos.ap-shanghai.myqcloud.com/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BANexus3%E7%A7%81%E6%9C%89Maven%E3%80%81Docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BANexus3%E7%A7%81%E6%9C%89Maven%E3%80%81Docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93-2.png" alt="Podman、Docker搭建Nexus3私有Maven、Docker镜像仓库-2">  </p>
+</li>
+<li><p>Docker 镜像仓库分别有 group 、hosted 、proxy 三个选项  </p>
+<ul>
+<li><p>group : 组类型，实质作用是组合多个仓库为一个地址</p>
+</li>
+<li><p>hosted : 本地存储，即同 docker 官方仓库一样提供本地私服功能</p>
+</li>
+<li><p>proxy : 提供代理其他仓库的类型，如 docker 中央仓库  </p>
+<p>此处选择 hosted 类型,填写上名称后,可勾选 HTTP 选项并填入 8082-8089 间任意一个端口作为镜像仓库的推拉端口<br>勾选 <code>Enable Docker V1 API</code> 允许 v1 版本 API<br>其他选项默认即可,点击 <code>Create repository</code>即可创建仓库<br>结果如下:<br><img src="https://blog-1257162717.cos.ap-shanghai.myqcloud.com/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BANexus3%E7%A7%81%E6%9C%89Maven%E3%80%81Docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/Podman%E3%80%81Docker%E6%90%AD%E5%BB%BAnexus3%E7%A7%81%E6%9C%89maven%E3%80%81docker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93-3.png" alt="Podman、Docker搭建Nexus3私有Maven、Docker镜像仓库-3"><br>至此,大功告成</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><p>   最后还有一些个人的思路,云服务器上部署私有镜像仓库听起来是很不错,但是实际上还是存在着一些问题,比如存储问题, Nexus 本身是支持使用 AWS 的对象存储作为 Blob Stores 的但是奈何我不想再注册一个 AWS 的帐号,而对象存储本身又是一笔支出,还是从免费入手,一番查证后,腾讯云的对象存储也是使用 AWS 的 S3 协议,但是一番操作过后,由于设置中的 Region 只能在已有列表中选择,宣告GG,于是又衍生出了另一个思路, 使用对象存储工具 COSFS 将腾讯云的存储桶挂载为服务器磁盘,然后在 Blob Stores 中进行添加,达到同样的效果,后续如果有时间去操作了,再出一个教程吧,而关于 Docker 和 Podman 如何使用私有镜像仓库,实际上还是有一些小坑的,也是等下个教程再说吧</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Podman/" rel="tag">Podman</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8%E5%8C%96/" rel="tag">容器化</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-ssh免密登陆"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/06/22/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/"
+    >ssh免密登陆</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/06/22/ssh%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86/" class="article-date">
+  <time datetime="2021-06-22T01:42:41.000Z" itemprop="datePublished">2021-06-22</time>
+</a> 
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+ 
+      
+       
+      
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="1-在客户端生成公私钥"><a href="#1-在客户端生成公私钥" class="headerlink" title="1. 在客户端生成公私钥"></a>1. 在客户端生成公私钥</h2>  <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">ssh<span class="token operator">-</span>keygen <span class="token comment"># 在当前服务器生成公私钥,选项全为默认即可  </span>
 cd ~<span class="token operator">/</span><span class="token punctuation">.</span>ssh  <span class="token comment"># 进入公私钥存放文件夹  </span>
-<span class="token function">ls</span>         <span class="token comment"># 查看所有文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><code>id_rsa</code>私钥文件<br><code>id_rsa.pub</code> 公钥文件</p><h2 id="2-把公钥上传到服务器"><a href="#2-把公钥上传到服务器" class="headerlink" title="2. 把公钥上传到服务器"></a>2. 把公钥上传到服务器</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">ssh<span class="token operator">-</span><span class="token function">copy-id</span> <span class="token operator">-</span>i ~<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa evil@192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>1<span class="token punctuation">.</span>155 <span class="token comment"># 复制公钥到服务器上</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><code>192.168.1.155</code>为服务器地址<br><code>evil</code>为服务器登陆用户名<br>此时可登陆到服务器确认<code>.ssh</code>目录中是否以写入客户端公钥</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/.ssh <span class="token comment"># 进入用户目录下.ssh文件夹</span>
-<span class="token function">cat</span> authorized_keys <span class="token comment">#查看文件中是否已写入客户端公钥</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="3-免密登陆"><a href="#3-免密登陆" class="headerlink" title="3. 免密登陆"></a>3. 免密登陆</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> evil@192.168.1.155 <span class="token comment"># 通过ssh免密登陆服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div><footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul></footer></div></article><article id="post-最简单启动合成大西瓜" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal><div class="article-inner"><header class="article-header"><h2 itemprop="name"><a class="article-title" href="/2021/02/04/%E6%9C%80%E7%AE%80%E5%8D%95%E5%90%AF%E5%8A%A8%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/">最简单启动合成大西瓜</a></h2></header><div class="article-meta"><a href="/2021/02/04/%E6%9C%80%E7%AE%80%E5%8D%95%E5%90%AF%E5%8A%A8%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/" class="article-date"><time datetime="2021-02-04T12:03:13.000Z" itemprop="datePublished">2021-02-04</time></a><div class="article-category"><a class="article-category-link" href="/categories/%E6%97%A0%E8%81%8A%E8%87%B3%E6%9E%81/">无聊至极</a></div></div><div class="article-entry" itemprop="articleBody"><blockquote><p>最近合成大西瓜忽然爆火，并且出了很多的魔改版<br>很多人找到了源码但是不知道怎么启动<br><a target="_blank" rel="noopener" href="https://github.com/li-ji-ji/gua.git">COPY下来的源码地址</a><br>毕竟点击index.html之后能打开但是爆了一堆错误<br><img src="https://blog-1257162717.cos.ap-shanghai.myqcloud.com/%E6%9C%80%E7%AE%80%E5%8D%95%E5%90%AF%E5%8A%A8%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/1.png" alt="合成大西瓜bug"><br>看来看去不就是跨域问题<br>网上的教程一水的 <code>node</code> + <code>npm</code><br>今天整个个人认为最简单的，这东西实际上不就个静态文件吗<br>该有的依赖不是在包里就是引的cdn，<br>直接 <code>Nginx</code> 他不香吗<br>说整就整</p></blockquote><a class="article-more-link" href="/2021/02/04/%E6%9C%80%E7%AE%80%E5%8D%95%E5%90%AF%E5%8A%A8%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/">阅读更多...</a></div><footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/" rel="tag">合成大西瓜</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A0%E8%81%8A%E8%87%B3%E6%9E%81/" rel="tag">无聊至极</a></li></ul></footer></div></article><article id="post-fcitx5在vscode中的BUG" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal><div class="article-inner"><header class="article-header"><h2 itemprop="name"><a class="article-title" href="/2021/01/24/fcitx5%E5%9C%A8vscode%E4%B8%AD%E7%9A%84BUG/">fcitx5在vscode中的BUG</a></h2></header><div class="article-meta"><a href="/2021/01/24/fcitx5%E5%9C%A8vscode%E4%B8%AD%E7%9A%84BUG/" class="article-date"><time datetime="2021-01-24T17:35:54.000Z" itemprop="datePublished">2021-01-25</time></a><div class="article-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></div></div><div class="article-entry" itemprop="articleBody"><h2 id="关于fcitx5在vscode命令行中输入重复的问题"><a href="#关于fcitx5在vscode命令行中输入重复的问题" class="headerlink" title="关于fcitx5在vscode命令行中输入重复的问题"></a>关于fcitx5在vscode命令行中输入重复的问题</h2><h3 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h3><ul><li>最近fcitx4版本的输入法用腻了，听说fcitx5不错，于是尝尝鲜，结果bug吸引体质又发挥作用了，在vscode的命令行里打字的时候就出现bug了（不要问我为什么要在终端里敲中文= =），bug效果如下： <a class="article-more-link" href="/2021/01/24/fcitx5%E5%9C%A8vscode%E4%B8%AD%E7%9A%84BUG/">阅读更多...</a></li></ul></div><footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fcitx5/" rel="tag">fcitx5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/" rel="tag">vscode</a></li></ul></footer></div></article><article id="post-Nginx搭建简单文件服务器" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal><div class="article-inner"><header class="article-header"><h2 itemprop="name"><a class="article-title" href="/2021/01/11/Nginx%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">Nginx搭建简单文件服务器</a></h2></header><div class="article-meta"><a href="/2021/01/11/Nginx%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date"><time datetime="2021-01-11T09:31:43.000Z" itemprop="datePublished">2021-01-11</time></a><div class="article-category"><a class="article-category-link" href="/categories/Nginx/">Nginx</a></div></div><div class="article-entry" itemprop="articleBody"><h3 id="1-Nginx安装"><a href="#1-Nginx安装" class="headerlink" title="1. Nginx安装"></a>1. Nginx安装</h3><ul><li>Ubuntu: <code>sudo apt-get install nginx</code></li><li>Fedora、Centos: <code>sudo yum install nginx</code></li><li>Manjaro: <code>sudo pacman -S nginx</code></li></ul><h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2. 配置文件"></a>2. 配置文件</h3><ul><li>查找Nginx配置文件: <code>sudo find / -name nginx.conf</code></li><li>一般存放在 /etc/nginx/nginx.conf</li></ul><a class="article-more-link" href="/2021/01/11/Nginx%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">阅读更多...</a></div><footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li></ul></footer></div></article><article id="post-JVM基础" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal><div class="article-inner"><header class="article-header"><h2 itemprop="name"><a class="article-title" href="/2021/01/08/JVM%E5%9F%BA%E7%A1%80/">JVM基础</a></h2></header><div class="article-meta"><a href="/2021/01/08/JVM%E5%9F%BA%E7%A1%80/" class="article-date"><time datetime="2021-01-08T13:30:53.000Z" itemprop="datePublished">2021-01-08</time></a><div class="article-category"><a class="article-category-link" href="/categories/Java/">Java</a></div></div><div class="article-entry" itemprop="articleBody"><h2 id="陈树义JVM基础15讲完结"><a href="#陈树义JVM基础15讲完结" class="headerlink" title="陈树义JVM基础15讲完结"></a>陈树义JVM基础15讲完结</h2><ul><li>原文地址： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/chanshuyi/p/jvm_serial_00_why_learn_jvm.html">陈树义JVM基础15讲</a> <a class="article-more-link" href="/2021/01/08/JVM%E5%9F%BA%E7%A1%80/">阅读更多...</a></li></ul></div><footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul></footer></div></article><article id="post-关于zsh启动时需手动source-zshrc的解决方案" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal><div class="article-inner"><header class="article-header"><h2 itemprop="name"><a class="article-title" href="/2020/05/06/%E5%85%B3%E4%BA%8Ezsh%E5%90%AF%E5%8A%A8%E6%97%B6%E9%9C%80%E6%89%8B%E5%8A%A8source-zshrc%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">关于Linux下zsh启动时需手动source ~/.zshrc的解决方案</a></h2></header><div class="article-meta"><a href="/2020/05/06/%E5%85%B3%E4%BA%8Ezsh%E5%90%AF%E5%8A%A8%E6%97%B6%E9%9C%80%E6%89%8B%E5%8A%A8source-zshrc%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date"><time datetime="2020-05-06T11:53:46.000Z" itemprop="datePublished">2020-05-06</time></a><div class="article-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></div></div><div class="article-entry" itemprop="articleBody"><h2 id="前置知识：-etc-zsh-zprofile"><a href="#前置知识：-etc-zsh-zprofile" class="headerlink" title="前置知识：/etc/zsh/zprofile"></a>前置知识：/etc/zsh/zprofile</h2><p>这是一个全局的配置文件，在用户登录的时候加载。一般是用来在登录的时候执行一些命令。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">sudo gedit ~<span class="token operator">/</span><span class="token punctuation">.</span>zprofile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>添加脚本</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">source ~<span class="token operator">/</span><span class="token punctuation">.</span>zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h1><h2 id="当然，类似问题也可以这样解决"><a href="#当然，类似问题也可以这样解决" class="headerlink" title="当然，类似问题也可以这样解决"></a>当然，类似问题也可以这样解决</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Faiz5z/article/details/80986460">参考博客地址</a></p></div><footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zsh/" rel="tag">zsh</a></li></ul></footer></div></article><article id="post-centos7环境下运行、关闭jar包" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal><div class="article-inner"><header class="article-header"><h2 itemprop="name"><a class="article-title" href="/2020/02/12/centos7%E7%8E%AF%E5%A2%83%E4%B8%8B%E8%BF%90%E8%A1%8C%E3%80%81%E5%85%B3%E9%97%ADjar%E5%8C%85/">Linux环境下运行、关闭jar包</a></h2></header><div class="article-meta"><a href="/2020/02/12/centos7%E7%8E%AF%E5%A2%83%E4%B8%8B%E8%BF%90%E8%A1%8C%E3%80%81%E5%85%B3%E9%97%ADjar%E5%8C%85/" class="article-date"><time datetime="2020-02-12T13:53:32.000Z" itemprop="datePublished">2020-02-12</time></a><div class="article-category"><a class="article-category-link" href="/categories/Java/">Java</a></div></div><div class="article-entry" itemprop="articleBody"><ul><li>启动<br>执行 <code>cd 文件夹路径</code> 命令进入jar包所在文件夹<br>后台运行jar包：<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">nohup java <span class="token operator">-</span>jar <span class="token operator">*</span>*<span class="token operator">*</span><span class="token punctuation">.</span>jar &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><code>nohub</code> 表示后台不挂断运行<br>如需将日志输出到指定文件，在&amp;前面加上&gt;***.log ，如下：<br>(使用&gt;为覆盖源文件，使用 &gt;&gt; 则为续写文件)<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">nohup java <span class="token operator">-</span>jar <span class="token operator">*</span>*<span class="token operator">*</span><span class="token punctuation">.</span>jar ><span class="token operator">*</span>*<span class="token operator">*</span><span class="token punctuation">.</span>log &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>关闭</li></ul><ol><li>方法一：<br>执行 <code>ps -ef|grep java</code> 命令查看当前正在运行的java进程，结果如下，第二列为进程PID<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">root     20032     1  0 Jan01 ?        00:00:00 sudo nohup java <span class="token operator">-</span>jar myblog<span class="token punctuation">.</span>jar
+<span class="token function">ls</span>         <span class="token comment"># 查看所有文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>  <code>id_rsa</code>私钥文件<br>  <code>id_rsa.pub</code> 公钥文件  </p>
+<h2 id="2-把公钥上传到服务器"><a href="#2-把公钥上传到服务器" class="headerlink" title="2. 把公钥上传到服务器"></a>2. 把公钥上传到服务器</h2>  <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">ssh<span class="token operator">-</span><span class="token function">copy-id</span> <span class="token operator">-</span>i ~<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa evil@192<span class="token punctuation">.</span>168<span class="token punctuation">.</span>1<span class="token punctuation">.</span>155 <span class="token comment"># 复制公钥到服务器上</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>  <code>192.168.1.155</code>为服务器地址<br>  <code>evil</code>为服务器登陆用户名<br>  此时可登陆到服务器确认<code>.ssh</code>目录中是否以写入客户端公钥  </p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> ~/.ssh <span class="token comment"># 进入用户目录下.ssh文件夹</span>
+<span class="token function">cat</span> authorized_keys <span class="token comment">#查看文件中是否已写入客户端公钥</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="3-免密登陆"><a href="#3-免密登陆" class="headerlink" title="3. 免密登陆"></a>3. 免密登陆</h2>  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> evil@192.168.1.155 <span class="token comment"># 通过ssh免密登陆服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-最简单启动合成大西瓜"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/02/04/%E6%9C%80%E7%AE%80%E5%8D%95%E5%90%AF%E5%8A%A8%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/"
+    >最简单启动合成大西瓜</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/02/04/%E6%9C%80%E7%AE%80%E5%8D%95%E5%90%AF%E5%8A%A8%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/" class="article-date">
+  <time datetime="2021-02-04T12:03:13.000Z" itemprop="datePublished">2021-02-04</time>
+</a> 
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%97%A0%E8%81%8A%E8%87%B3%E6%9E%81/">无聊至极</a>
+  </div>
+ 
+      
+       
+      
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>最近合成大西瓜忽然爆火，并且出了很多的魔改版<br>很多人找到了源码但是不知道怎么启动<br><a target="_blank" rel="noopener" href="https://github.com/li-ji-ji/gua.git">COPY下来的源码地址</a><br>毕竟点击index.html之后能打开但是爆了一堆错误<br><img src="https://blog-1257162717.cos.ap-shanghai.myqcloud.com/%E6%9C%80%E7%AE%80%E5%8D%95%E5%90%AF%E5%8A%A8%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/1.png" alt="合成大西瓜bug"><br>看来看去不就是跨域问题<br>网上的教程一水的 <code>node</code> + <code>npm</code><br>今天整个个人认为最简单的，这东西实际上不就个静态文件吗<br>该有的依赖不是在包里就是引的cdn，<br>直接 <code>Nginx</code> 他不香吗<br>说整就整</p>
+</blockquote> 
+      <a class="article-more-link" href="/2021/02/04/%E6%9C%80%E7%AE%80%E5%8D%95%E5%90%AF%E5%8A%A8%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%90%88%E6%88%90%E5%A4%A7%E8%A5%BF%E7%93%9C/" rel="tag">合成大西瓜</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A0%E8%81%8A%E8%87%B3%E6%9E%81/" rel="tag">无聊至极</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-fcitx5在vscode中的BUG"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/01/24/fcitx5%E5%9C%A8vscode%E4%B8%AD%E7%9A%84BUG/"
+    >fcitx5在vscode中的BUG</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/01/24/fcitx5%E5%9C%A8vscode%E4%B8%AD%E7%9A%84BUG/" class="article-date">
+  <time datetime="2021-01-24T17:35:54.000Z" itemprop="datePublished">2021-01-25</time>
+</a> 
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+ 
+      
+       
+      
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="关于fcitx5在vscode命令行中输入重复的问题"><a href="#关于fcitx5在vscode命令行中输入重复的问题" class="headerlink" title="关于fcitx5在vscode命令行中输入重复的问题"></a>关于fcitx5在vscode命令行中输入重复的问题</h2><h3 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h3><ul>
+<li>最近fcitx4版本的输入法用腻了，听说fcitx5不错，于是尝尝鲜，结果bug吸引体质又发挥作用了，在vscode的命令行里打字的时候就出现bug了（不要问我为什么要在终端里敲中文= =），bug效果如下： 
+      <a class="article-more-link" href="/2021/01/24/fcitx5%E5%9C%A8vscode%E4%B8%AD%E7%9A%84BUG/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fcitx5/" rel="tag">fcitx5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/" rel="tag">vscode</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-Nginx搭建简单文件服务器"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/01/11/Nginx%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"
+    >Nginx搭建简单文件服务器</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/01/11/Nginx%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="article-date">
+  <time datetime="2021-01-11T09:31:43.000Z" itemprop="datePublished">2021-01-11</time>
+</a> 
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Nginx/">Nginx</a>
+  </div>
+ 
+      
+       
+      
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h3 id="1-Nginx安装"><a href="#1-Nginx安装" class="headerlink" title="1. Nginx安装"></a>1. Nginx安装</h3><ul>
+<li>Ubuntu: <code>sudo apt-get install nginx</code>  </li>
+<li>Fedora、Centos: <code>sudo yum install nginx</code>  </li>
+<li>Manjaro: <code>sudo pacman -S nginx</code>  </li>
+</ul>
+<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2. 配置文件"></a>2. 配置文件</h3><ul>
+<li>查找Nginx配置文件: <code>sudo find / -name nginx.conf</code>  </li>
+<li>一般存放在 /etc/nginx/nginx.conf  </li>
+</ul> 
+      <a class="article-more-link" href="/2021/01/11/Nginx%E6%90%AD%E5%BB%BA%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-JVM基础"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/01/08/JVM%E5%9F%BA%E7%A1%80/"
+    >JVM基础</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/01/08/JVM%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-01-08T13:30:53.000Z" itemprop="datePublished">2021-01-08</time>
+</a> 
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+ 
+      
+       
+      
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="陈树义JVM基础15讲完结"><a href="#陈树义JVM基础15讲完结" class="headerlink" title="陈树义JVM基础15讲完结"></a>陈树义JVM基础15讲完结</h2><ul>
+<li>原文地址： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/chanshuyi/p/jvm_serial_00_why_learn_jvm.html">陈树义JVM基础15讲</a> 
+      <a class="article-more-link" href="/2021/01/08/JVM%E5%9F%BA%E7%A1%80/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-关于zsh启动时需手动source-zshrc的解决方案"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/05/06/%E5%85%B3%E4%BA%8Ezsh%E5%90%AF%E5%8A%A8%E6%97%B6%E9%9C%80%E6%89%8B%E5%8A%A8source-zshrc%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"
+    >关于Linux下zsh启动时需手动source ~/.zshrc的解决方案</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/05/06/%E5%85%B3%E4%BA%8Ezsh%E5%90%AF%E5%8A%A8%E6%97%B6%E9%9C%80%E6%89%8B%E5%8A%A8source-zshrc%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+  <time datetime="2020-05-06T11:53:46.000Z" itemprop="datePublished">2020-05-06</time>
+</a> 
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+ 
+      
+       
+      
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="前置知识：-etc-zsh-zprofile"><a href="#前置知识：-etc-zsh-zprofile" class="headerlink" title="前置知识：/etc/zsh/zprofile"></a>前置知识：/etc/zsh/zprofile</h2><p>这是一个全局的配置文件，在用户登录的时候加载。一般是用来在登录的时候执行一些命令。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">sudo gedit ~<span class="token operator">/</span><span class="token punctuation">.</span>zprofile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>添加脚本</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">source ~<span class="token operator">/</span><span class="token punctuation">.</span>zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h1><h2 id="当然，类似问题也可以这样解决"><a href="#当然，类似问题也可以这样解决" class="headerlink" title="当然，类似问题也可以这样解决"></a>当然，类似问题也可以这样解决</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Faiz5z/article/details/80986460">参考博客地址</a></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zsh/" rel="tag">zsh</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-centos7环境下运行、关闭jar包"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/02/12/centos7%E7%8E%AF%E5%A2%83%E4%B8%8B%E8%BF%90%E8%A1%8C%E3%80%81%E5%85%B3%E9%97%ADjar%E5%8C%85/"
+    >Linux环境下运行、关闭jar包</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/02/12/centos7%E7%8E%AF%E5%A2%83%E4%B8%8B%E8%BF%90%E8%A1%8C%E3%80%81%E5%85%B3%E9%97%ADjar%E5%8C%85/" class="article-date">
+  <time datetime="2020-02-12T13:53:32.000Z" itemprop="datePublished">2020-02-12</time>
+</a> 
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+ 
+      
+       
+      
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <ul>
+<li><p>启动<br>执行  <code>cd 文件夹路径</code>  命令进入jar包所在文件夹<br>后台运行jar包：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">nohup java <span class="token operator">-</span>jar <span class="token operator">*</span>*<span class="token operator">*</span><span class="token punctuation">.</span>jar &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>nohub</code> 表示后台不挂断运行<br>如需将日志输出到指定文件，在&amp;前面加上&gt;***.log ，如下：<br>(使用&gt;为覆盖源文件，使用 &gt;&gt; 则为续写文件)</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">nohup java <span class="token operator">-</span>jar <span class="token operator">*</span>*<span class="token operator">*</span><span class="token punctuation">.</span>jar ><span class="token operator">*</span>*<span class="token operator">*</span><span class="token punctuation">.</span>log &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>关闭</p>
+</li>
+</ul>
+<ol>
+<li>方法一：<br> 执行 <code>ps -ef|grep java</code> 命令查看当前正在运行的java进程，结果如下，第二列为进程PID  <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">root     20032     1  0 Jan01 ?        00:00:00 sudo nohup java <span class="token operator">-</span>jar myblog<span class="token punctuation">.</span>jar
 root     20033 20032  0 Jan01 ?        00:55:54 java <span class="token operator">-</span>jar myblog<span class="token punctuation">.</span>jar
 root     26038     1  0  2019 ?        00:00:00 sudo nohup java <span class="token operator">-</span>jar IctExam<span class="token punctuation">.</span>jar
 root     26039 26038  0  2019 ?        06:51:08 java <span class="token operator">-</span>jar IctExam<span class="token punctuation">.</span>jar
-root     28443  9171  0 21:47 pts<span class="token operator">/</span>3    00:00:00 grep <span class="token operator">--</span>color=auto java<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li>方法二：<br>执行<code>pidof java</code> 或者 <code>jps</code> 查看现有jar包进程PID<br>执行 <code>kill -9 PID</code> 结束该PID对应的进程</li></ol></div><footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul></footer></div></article></article></section></div><footer class="footer"><div class="outer"><ul><li>Copyrights &copy; 2020-2021 <i class="ri-heart-fill heart_icon"></i> evil-scream</li></ul><ul><li></li></ul><ul><li><span><span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span> <span class="division">|</span> <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span></span></span></li></ul><ul></ul><ul></ul><ul><li><script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1279619947&amp;web_id=1279619947"></script></li></ul></div></footer><div class="float_btns"><div class="totop" id="totop"><i class="ri-arrow-up-line"></i></div><div class="todark" id="todark"><i class="ri-moon-line"></i></div></div></main><aside class="sidebar on"><button class="navbar-toggle"></button><nav class="navbar"><div class="logo"><a href="/"><img src="/images/ayer-side.svg" alt="Evil的养鸡场"></a></div><ul class="nav nav-main"><li class="nav-item"><a class="nav-item-link" href="/">主页</a></li><li class="nav-item"><a class="nav-item-link" href="/archives">归档</a></li><li class="nav-item"><a class="nav-item-link" href="/categories">分类</a></li><li class="nav-item"><a class="nav-item-link" href="/tags">标签</a></li><li class="nav-item"><a class="nav-item-link" href="/about">关于我</a></li></ul></nav><nav class="navbar navbar-bottom"><ul class="nav"><li class="nav-item"><a class="nav-item-link nav-item-search" title="搜索"><i class="ri-search-line"></i> </a><a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed"><i class="ri-rss-line"></i></a></li></ul></nav><div class="search-form-wrap"><div class="local-search local-search-plugin"><input type="search" id="local-search-input" class="local-search-input" placeholder="Search..."><div id="local-search-result" class="local-search-result"></div></div></div></aside><script>window.matchMedia("(max-width: 768px)").matches&&(document.querySelector(".content").classList.remove("on"),document.querySelector(".sidebar").classList.remove("on"))</script><div id="mask"></div><div id="reward"><span class="close"><i class="ri-close-line"></i></span><p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p><div class="reward-box"></div></div><script src="/js/jquery-2.0.3.min.js"></script><script src="/js/lazyload.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script><script src="/dist/main.js"></script><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"><script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script><script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script><script>function viewer_init(){let t=document.querySelectorAll(".pswp")[0],e=document.querySelectorAll(".article-entry img:not(.reward-img)");e.forEach((i,r)=>{i.onclick=()=>{if(document.querySelector(".left-col.show"))return;let i=[];e.forEach((t,e)=>{t.getAttribute("data-idx",e);let r=t.getAttribute("data-target")||t.getAttribute("src"),o=t.getAttribute("alt");const c=new Image;c.src=r,i.push({src:r,w:c.width||t.width,h:c.height||t.height,title:o})}),new PhotoSwipe(t,PhotoSwipeUI_Default,i,{index:parseInt(r)}).init()}})}viewer_init()</script><script src="/js/busuanzi-2.3.pure.min.js"></script><script src="/js/clickBoom2.js"></script><script src="/js/dz.js"></script><script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script><script src="https://cdn1.lncld.net/static/js/2.5.0/av-min.js"></script><script>var APP_ID="IbzsqtT1lmQ9jnCeDAwS0Xrf-gzGzoHsz",APP_KEY="Bw1QLfF1OcQsRtHaOdepcKAp";function showTime(t){var e=new AV.Query("Counter"),n=$(".leancloud_visitors").attr("id").trim();e.equalTo("xid",n),e.find().then((function(t){for(var e=0;e<t.length;e++){var n=t[e]._serverData.time,i=t[e]._serverData.url;$(document.getElementById(i)).text(n)}}))}function addCount(t){var e=$(".leancloud_visitors"),n=e.attr("id").trim(),i=e.attr("data-flag-title").trim(),a=new AV.Query(t);a.equalTo("xid",n),a.find().then((function(e){if(e.length>0){var a=e[0];a.fetchWhenSave(!0),a.increment("time"),a.save()}else{var r=new t;r.set("title",i),r.set("url",n),r.set("xid",n),r.set("time",1),r.save(null,{success:function(t){}})}}))}AV.init({appId:APP_ID,appKey:APP_KEY}),$((function(){}))</script><div id="music"><iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52" src="//music.163.com/outchain/player?type=2&id=25906125&auto=1&height=32"></iframe></div><style>#music{position:fixed;right:15px;bottom:0;z-index:998}</style></div></body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKMQGSD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+root     28443  9171  0 21:47 pts<span class="token operator">/</span>3    00:00:00 grep <span class="token operator">--</span>color=auto java<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>方法二：<br>执行<code>pidof java</code> 或者 <code>jps</code> 查看现有jar包进程PID<br>执行 <code>kill -9 PID</code> 结束该PID对应的进程</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+  </article>
+  
+
+  
+</section>
+</div>
+
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020-2021
+        <i class="ri-heart-fill heart_icon"></i> evil-scream
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+      <li>
+          <img src="/images/beian.png"></img>
+          <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=01234567890123" target="_black" rel="nofollow">粤ICP备19048059号-1</a>
+      </li>
+        
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://v1.cnzz.com/z_stat.php?id=1279619947&amp;web_id=1279619947'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Evil的养鸡场"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
+
+<!-- CodeCopy -->
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+  var APP_ID='IbzsqtT1lmQ9jnCeDAwS0Xrf-gzGzoHsz';
+  var APP_KEY='Bw1QLfF1OcQsRtHaOdepcKAp';
+  AV.init({
+      appId: APP_ID,
+      appKey: APP_KEY
+  });
+  function showTime(Counter){
+      var query=new AV.Query("Counter");
+      var url=$(".leancloud_visitors").attr('id').trim();
+      query.equalTo("xid",url);
+      query.find().then(function(results){
+        for(var i=0;i<results.length;i++){
+          var number=results[i]._serverData.time;
+          var urll=results[i]._serverData.url;
+          // console.log(number);
+          $(document.getElementById(urll)).text(number);
+        }
+      })
+  }
+  function addCount(Counter){
+    var $visitors=$(".leancloud_visitors");
+    var url=$visitors.attr('id').trim();
+    var title=$visitors.attr('data-flag-title').trim();
+    var query=new AV.Query(Counter);
+    query.equalTo("xid",url);
+    query.find().then(function(results){
+      if(results.length>0){
+        var counter=results[0];
+        counter.fetchWhenSave(true);
+        counter.increment("time");
+        counter.save();
+        // console.log("ok");
+      }
+      else{
+        var newCounter=new Counter();
+        newCounter.set("title",title);
+        newCounter.set("url",url);
+        newCounter.set("xid",url);
+        newCounter.set("time",1);
+        newCounter.save(null,{
+          success: function(newCounter){
+            // console.log("new");
+          }
+        });
+      }
+    })
+  }
+$(function(){
+  
+});
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=25906125&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+</body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKMQGSD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</html>

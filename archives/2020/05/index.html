@@ -1,2 +1,487 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="编程,程序员,Java,React,Linux,SpringBoot,Go,JavaScript"><meta name="description" content="编程，程序员，Java"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="baidu-site-verification" content="code-TLOHuwMJbN"><meta name="google-site-verification" content="fG8aNcPDuTHtOQbiiG8VjvHsM-GTYHIkAS8ufFZSFU8"><script>!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-PKMQGSD",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")</script><title>归档: 2020/5 | Evil的养鸡场</title><meta name="generator" content="hexo-theme-ayer"><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/dist/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"><link rel="stylesheet" href="/css/custom.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?e63b83e32ffd141ab050decea213aa7b";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><link rel="alternate" href="/atom.xml" title="Evil的养鸡场" type="application/atom+xml">
-</head></html><body><div id="app"><canvas width="1777" height="841" style="position:fixed;left:0;top:0;z-index:99999;pointer-events:none"></canvas><main class="content on"><section class="outer"><article class="articles"><h1 class="page-type-title">2020/5</h1><div class="archives-wrap"><div class="archive-year-wrap"><a href="/archives/2020" class="archive-year">2020</a></div><div class="archives"><article class="archive-article archive-type-post"><div class="archive-article-inner"><header class="archive-article-header"><a href="/2020/05/06/%E5%85%B3%E4%BA%8Ezsh%E5%90%AF%E5%8A%A8%E6%97%B6%E9%9C%80%E6%89%8B%E5%8A%A8source-zshrc%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date"><time datetime="2020-05-06T11:53:46.000Z" itemprop="datePublished">05/06</time></a><h2 itemprop="name"><a class="archive-article-title" href="/2020/05/06/%E5%85%B3%E4%BA%8Ezsh%E5%90%AF%E5%8A%A8%E6%97%B6%E9%9C%80%E6%89%8B%E5%8A%A8source-zshrc%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">关于Linux下zsh启动时需手动source ~/.zshrc的解决方案</a></h2></header></div></article></div></div></article></section><footer class="footer"><div class="outer"><ul><li>Copyrights &copy; 2020-2021 <i class="ri-heart-fill heart_icon"></i> evil-scream</li></ul><ul><li></li></ul><ul><li><span><span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span> <span class="division">|</span> <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span></span></span></li></ul><ul></ul><ul></ul><ul><li><script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1279619947&amp;web_id=1279619947"></script></li></ul></div></footer><div class="float_btns"><div class="totop" id="totop"><i class="ri-arrow-up-line"></i></div><div class="todark" id="todark"><i class="ri-moon-line"></i></div></div></main><aside class="sidebar on"><button class="navbar-toggle"></button><nav class="navbar"><div class="logo"><a href="/"><img src="/images/ayer-side.svg" alt="Evil的养鸡场"></a></div><ul class="nav nav-main"><li class="nav-item"><a class="nav-item-link" href="/">主页</a></li><li class="nav-item"><a class="nav-item-link" href="/archives">归档</a></li><li class="nav-item"><a class="nav-item-link" href="/categories">分类</a></li><li class="nav-item"><a class="nav-item-link" href="/tags">标签</a></li><li class="nav-item"><a class="nav-item-link" href="/about">关于我</a></li></ul></nav><nav class="navbar navbar-bottom"><ul class="nav"><li class="nav-item"><a class="nav-item-link nav-item-search" title="搜索"><i class="ri-search-line"></i> </a><a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed"><i class="ri-rss-line"></i></a></li></ul></nav><div class="search-form-wrap"><div class="local-search local-search-plugin"><input type="search" id="local-search-input" class="local-search-input" placeholder="Search..."><div id="local-search-result" class="local-search-result"></div></div></div></aside><script>window.matchMedia("(max-width: 768px)").matches&&(document.querySelector(".content").classList.remove("on"),document.querySelector(".sidebar").classList.remove("on"))</script><div id="mask"></div><div id="reward"><span class="close"><i class="ri-close-line"></i></span><p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p><div class="reward-box"></div></div><script src="/js/jquery-2.0.3.min.js"></script><script src="/js/lazyload.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script><script src="/dist/main.js"></script><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"><script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script><script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script><script>function viewer_init(){let t=document.querySelectorAll(".pswp")[0],e=document.querySelectorAll(".article-entry img:not(.reward-img)");e.forEach((i,r)=>{i.onclick=()=>{if(document.querySelector(".left-col.show"))return;let i=[];e.forEach((t,e)=>{t.getAttribute("data-idx",e);let r=t.getAttribute("data-target")||t.getAttribute("src"),o=t.getAttribute("alt");const c=new Image;c.src=r,i.push({src:r,w:c.width||t.width,h:c.height||t.height,title:o})}),new PhotoSwipe(t,PhotoSwipeUI_Default,i,{index:parseInt(r)}).init()}})}viewer_init()</script><script src="/js/busuanzi-2.3.pure.min.js"></script><script src="/js/clickBoom2.js"></script><script src="/js/dz.js"></script><script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script><script src="https://cdn1.lncld.net/static/js/2.5.0/av-min.js"></script><script>var APP_ID="IbzsqtT1lmQ9jnCeDAwS0Xrf-gzGzoHsz",APP_KEY="Bw1QLfF1OcQsRtHaOdepcKAp";function showTime(t){var e=new AV.Query("Counter"),n=$(".leancloud_visitors").attr("id").trim();e.equalTo("xid",n),e.find().then((function(t){for(var e=0;e<t.length;e++){var n=t[e]._serverData.time,i=t[e]._serverData.url;$(document.getElementById(i)).text(n)}}))}function addCount(t){var e=$(".leancloud_visitors"),n=e.attr("id").trim(),i=e.attr("data-flag-title").trim(),a=new AV.Query(t);a.equalTo("xid",n),a.find().then((function(e){if(e.length>0){var a=e[0];a.fetchWhenSave(!0),a.increment("time"),a.save()}else{var r=new t;r.set("title",i),r.set("url",n),r.set("xid",n),r.set("time",1),r.save(null,{success:function(t){}})}}))}AV.init({appId:APP_ID,appKey:APP_KEY}),$((function(){}))</script><div id="music"><iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52" src="//music.163.com/outchain/player?type=2&id=25906125&auto=1&height=32"></iframe></div><style>#music{position:fixed;right:15px;bottom:0;z-index:998}</style></div></body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKMQGSD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="编程,程序员,Java,React,Linux,SpringBoot,Go,JavaScript" />
+   
+  <meta name="description" content="编程，程序员，Java" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="baidu-site-verification" content="code-TLOHuwMJbN" />
+  <meta name="google-site-verification" content="fG8aNcPDuTHtOQbiiG8VjvHsM-GTYHIkAS8ufFZSFU8" />
+  <!-- Google Tag Manager -->  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PKMQGSD');</script>
+    <!-- End Google Tag Manager -->
+  <title>
+    归档: 2020/5 |  Evil的养鸡场
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?e63b83e32ffd141ab050decea213aa7b";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<link rel="alternate" href="/atom.xml" title="Evil的养鸡场" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      <section class="outer">
+  
+  
+  <article class="articles">
+    
+    
+    <h1 class="page-type-title">2020/5</h1>
+    
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2020" class="archive-year">2020</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2020/05/06/%E5%85%B3%E4%BA%8Ezsh%E5%90%AF%E5%8A%A8%E6%97%B6%E9%9C%80%E6%89%8B%E5%8A%A8source-zshrc%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
+  <time datetime="2020-05-06T11:53:46.000Z" itemprop="datePublished">05/06</time>
+</a>
+       
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2020/05/06/%E5%85%B3%E4%BA%8Ezsh%E5%90%AF%E5%8A%A8%E6%97%B6%E9%9C%80%E6%89%8B%E5%8A%A8source-zshrc%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"
+    >关于Linux下zsh启动时需手动source ~/.zshrc的解决方案</a> 
+</h2>
+ 
+
+    </header>
+    
+    
+  </div>
+</article>
+      
+      
+    </div>
+  </div>
+  
+  
+
+  
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020-2021
+        <i class="ri-heart-fill heart_icon"></i> evil-scream
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+      <li>
+          <img src="/images/beian.png"></img>
+          <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=01234567890123" target="_black" rel="nofollow">粤ICP备19048059号-1</a>
+      </li>
+        
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://v1.cnzz.com/z_stat.php?id=1279619947&amp;web_id=1279619947'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Evil的养鸡场"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
+
+<!-- CodeCopy -->
+
+<!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
+
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+  var APP_ID='IbzsqtT1lmQ9jnCeDAwS0Xrf-gzGzoHsz';
+  var APP_KEY='Bw1QLfF1OcQsRtHaOdepcKAp';
+  AV.init({
+      appId: APP_ID,
+      appKey: APP_KEY
+  });
+  function showTime(Counter){
+      var query=new AV.Query("Counter");
+      var url=$(".leancloud_visitors").attr('id').trim();
+      query.equalTo("xid",url);
+      query.find().then(function(results){
+        for(var i=0;i<results.length;i++){
+          var number=results[i]._serverData.time;
+          var urll=results[i]._serverData.url;
+          // console.log(number);
+          $(document.getElementById(urll)).text(number);
+        }
+      })
+  }
+  function addCount(Counter){
+    var $visitors=$(".leancloud_visitors");
+    var url=$visitors.attr('id').trim();
+    var title=$visitors.attr('data-flag-title').trim();
+    var query=new AV.Query(Counter);
+    query.equalTo("xid",url);
+    query.find().then(function(results){
+      if(results.length>0){
+        var counter=results[0];
+        counter.fetchWhenSave(true);
+        counter.increment("time");
+        counter.save();
+        // console.log("ok");
+      }
+      else{
+        var newCounter=new Counter();
+        newCounter.set("title",title);
+        newCounter.set("url",url);
+        newCounter.set("xid",url);
+        newCounter.set("time",1);
+        newCounter.save(null,{
+          success: function(newCounter){
+            // console.log("new");
+          }
+        });
+      }
+    })
+  }
+$(function(){
+  
+});
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=25906125&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+</body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKMQGSD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</html>
