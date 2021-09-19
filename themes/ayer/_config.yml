@@ -159,7 +159,7 @@ katex:
 since: 2020
 
 # 是否显示页脚信息(建议保留)
-pageFooter: false
+pageFooter: true
 
 # ICP备案信息尾部显示
 icp:
@@ -168,7 +168,7 @@ icp:
   text: "粤ICP备19048059号-1" # 备案信息
 # 公安备案信息尾部显示
 gongan:
-  enable: false
+  enable: true
   img: /images/beian.png #公安备案图片
   url: "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=01234567890123" #公安备案链接
   text: "粤ICP备19048059号-1" #公安备案信息
