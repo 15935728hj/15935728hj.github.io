@@ -14,13 +14,14 @@
 <li>创建文件夹用于后面挂载容器数据<br>出于方便赋予 <code>777</code> 权限(重度洁癖者可自行授予其他权限)  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">  mkdir -p ~&#x2F;nexus&#x2F;data
   chmod 777 -R ~&#x2F;nexus
   &#96;&#96;&#96;  
+
 * 创建容器并挂载对应数据卷  
   &#96;&#96;&#96;shell
   podman run --restart always -d \ 
              -v ~&#x2F;nexus&#x2F;data:&#x2F;nexus-data \ 
              -p 8081-8089:8081-8089 \ 
              --name nexus \ 
-             klo2k&#x2F;nexus3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+             klo2k&#x2F;nexus3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 大约等待两分钟后通过浏览器访问 <code>http://IP地址:8081</code> 即可进入 Nexus 的管理界面<br>默认帐号为admin,默认密码可通过挂载的数据卷中的admin.password查看,登陆后可修改密码<br>端口映射了 8081-8089 九个端口作为冗余  </li>
 </ul>
 </li>
