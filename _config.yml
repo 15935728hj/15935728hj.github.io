@@ -146,7 +146,7 @@ live2d:
     opacity: 0.7
 
 # 压缩
-all_minifier: true
+all_minifier: false
 
 feed:
   type: atom
