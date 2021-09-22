@@ -7,14 +7,14 @@
 <h1 id="此帖终结"><a href="#此帖终结" class="headerlink" title="此帖终结"></a>此帖终结</h1><p>哈哈逗你的,众所周知前期免费中后期就可能收费,作为一个DIY(qiong bi)爱好者,当然是自己动手搭建一个,经过 Google 最终选型是 Nexus<br>Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品。它是一个强大的仓库管理器，极大地简化了内部仓库的维护和外部仓库的访问(抄的)</p>
 <h1 id="进入教程"><a href="#进入教程" class="headerlink" title="进入教程"></a>进入教程</h1><ol>
 <li><p>Podman、Docker安装<br>推荐官方文档: <a href="https://podman.io/getting-started/installation">Podman安装</a>、<a href="https://docs.docker.com/engine/install/">Docker安装</a>  </p>
-<p><code>PS</code>:使用 Arch 系 Linux 安装 Podman 时会遇到权限问题, ArchWiki 上就有解决方案<a href="https://wiki.archlinux.org/title/Podman">(地址)</a>,Podman 基本兼容 Docker 命令,下文使用 Podman 进行操作,如使用 Docker ,需 root 权限</p>
+<p><code>PS</code>:使用 Arch 系 Linux 安装 Podman 时会遇到权限问题, ArchWiki 上就有解决方案<a href="https://wiki.archlinux.org/title/Podman">(地址)</a>,Podman 基本兼容 Docker 命令,下文使用 Podman 进行操作,如使用 Docker ,需 root 权限  </p>
 </li>
 <li><p>部署<br>此处使用最简单的 Podman 容器化部署  </p>
 <ul>
-<li>创建文件夹用于后面挂载容器数据<br>出于方便赋予 <code>777</code> 权限(重度洁癖者可自行授予其他权限)<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">  mkdir -p ~&#x2F;nexus&#x2F;data
+<li>创建文件夹用于后面挂载容器数据<br>出于方便赋予 <code>777</code> 权限(重度洁癖者可自行授予其他权限)  <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">  mkdir -p ~&#x2F;nexus&#x2F;data
   chmod 777 -R ~&#x2F;nexus
   &#96;&#96;&#96;  
-* 创建容器并挂载对应数据卷
+* 创建容器并挂载对应数据卷  
   &#96;&#96;&#96;shell
   podman run --restart always -d \ 
              -v ~&#x2F;nexus&#x2F;data:&#x2F;nexus-data \ 
