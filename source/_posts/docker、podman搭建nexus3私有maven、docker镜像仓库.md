@@ -45,6 +45,7 @@ Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品�
      mkdir -p ~/nexus/data
      chmod 777 -R ~/nexus
      ```  
+
    * 创建容器并挂载对应数据卷  
      ```shell
      podman run --restart always -d \ 
