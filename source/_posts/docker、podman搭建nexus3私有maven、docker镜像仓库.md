@@ -38,14 +38,13 @@ Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品�
    `PS`:使用 Arch 系 Linux 安装 Podman 时会遇到权限问题, ArchWiki 上就有解决方案[(地址)](https://wiki.archlinux.org/title/Podman),Podman 基本兼容 Docker 命令,下文使用 Podman 进行操作,如使用 Docker ,需 root 权限  
 
 2. 部署  
-   此处使用最简单的 Podman 容器化部署  
+   此处使用最简单的 Podman 容器化部署 
    * 创建文件夹用于后面挂载容器数据  
-     出于方便赋予 ``777`` 权限(重度洁癖者可自行授予其他权限)  
+     出于方便赋予 ``777`` 权限(重度洁癖者可自行授予其他权限)   
      ```shell
      mkdir -p ~/nexus/data
-     chmod 777 -R ~/nexus
+     chmod 777 -R ~/nexus  
      ```  
-
    * 创建容器并挂载对应数据卷  
      ```shell
      podman run --restart always -d \ 
@@ -53,7 +52,7 @@ Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品�
                 -p 8081-8089:8081-8089 \ 
                 --name nexus \ 
                 klo2k/nexus3
-     ```
+     ```  
      大约等待两分钟后通过浏览器访问 ``http://IP地址:8081`` 即可进入 Nexus 的管理界面  
      默认帐号为admin,默认密码可通过挂载的数据卷中的admin.password查看,登陆后可修改密码  
      端口映射了 8081-8089 九个端口作为冗余  
