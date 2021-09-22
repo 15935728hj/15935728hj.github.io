@@ -40,12 +40,12 @@ Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品�
 2. 部署  
    此处使用最简单的 Podman 容器化部署  
    * 创建文件夹用于后面挂载容器数据  
-     出于方便赋予 ``777`` 权限(重度洁癖者可自行授予其他权限)
+     出于方便赋予 ``777`` 权限(重度洁癖者可自行授予其他权限)  
      ```shell
      mkdir -p ~/nexus/data
      chmod 777 -R ~/nexus
      ```  
-   * 创建容器并挂载对应数据卷
+   * 创建容器并挂载对应数据卷  
      ```shell
      podman run --restart always -d \ 
                 -v ~/nexus/data:/nexus-data \ 
