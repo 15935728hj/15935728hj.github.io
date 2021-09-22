@@ -35,7 +35,7 @@ Nexus 的全称是 Nexus Repository Manager,是 Sonatype 公司的一个产品�
 1. Podman、Docker安装  
    推荐官方文档: [Podman安装](https://podman.io/getting-started/installation)、[Docker安装](https://docs.docker.com/engine/install/)  
    
-   `PS`:使用 Arch 系 Linux 安装 Podman 时会遇到权限问题, ArchWiki 上就有解决方案[(地址)](https://wiki.archlinux.org/title/Podman),Podman 基本兼容 Docker 命令,下文使用 Podman 进行操作,如使用 Docker ,需 root 权限
+   `PS`:使用 Arch 系 Linux 安装 Podman 时会遇到权限问题, ArchWiki 上就有解决方案[(地址)](https://wiki.archlinux.org/title/Podman),Podman 基本兼容 Docker 命令,下文使用 Podman 进行操作,如使用 Docker ,需 root 权限  
 
 2. 部署  
    此处使用最简单的 Podman 容器化部署  
